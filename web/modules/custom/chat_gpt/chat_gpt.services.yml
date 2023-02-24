@@ -1,0 +1,3 @@
+services:
+  chat_gpt.openai_client:
+    class: GuzzleHttp\Client

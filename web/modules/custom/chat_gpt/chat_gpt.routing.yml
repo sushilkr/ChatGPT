@@ -1,0 +1,22 @@
+chat_gpt.response:
+  path: '/chat-gpt/response/{message}/{response}'
+  defaults:
+    _controller: '\Drupal\chat_gpt\Controller\ChatGPTResponseController::displayResponse'
+  requirements:
+    _permission: 'access content'
+chat_gpt.form:
+  path: '/chat-gpt/form'
+  defaults:
+    _form: '\Drupal\chat_gpt\Form\ChatGPTForm'
+    _title: 'ChatGPT Form'
+  requirements:
+    _permission: 'access content'
+chat_gpt.chat_g_p_t_config_form:
+  path: '/admin/config/chat_gpt/chatgptconfig'
+  defaults:
+    _form: '\Drupal\chat_gpt\Form\chatGPTConfigForm'
+    _title: 'ChatGPT API Configurations'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

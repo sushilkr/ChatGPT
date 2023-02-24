@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains chat_gpt.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function chat_gpt_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the chat_gpt module.
+    case 'help.page.chat_gpt':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Chat GPT implementation.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

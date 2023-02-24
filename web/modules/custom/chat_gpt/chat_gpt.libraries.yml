@@ -1,0 +1,7 @@
+chat-gpt-lib:
+  version: 1.x
+  js:
+    js/jquery.autocorrect.js: {}
+    js/clipboard.min.js: {}
+    js/chat-gpt_custom.js: {}
+    

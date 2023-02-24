@@ -1,0 +1,9 @@
+name: 'Chat GPT'
+type: module
+description: 'Chat GPT implementation.'
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+package: 'Custom'
+dependencies:
+  - http_client_manager
+configure: chat_gpt.chat_g_p_t_config_form
