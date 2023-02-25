@@ -101,10 +101,10 @@ class ChatGPTForm extends FormBase {
             ],
         ];
 
-        $form['submit'] = [
+        /*$form['submit'] = [
             '#type' => 'submit',
             '#value' => $this->t('Send'),
-        ];
+        ];*/
         return $form;
     }
 
