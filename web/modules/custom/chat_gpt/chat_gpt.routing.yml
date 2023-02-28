@@ -10,7 +10,7 @@ chat_gpt.form:
     _form: '\Drupal\chat_gpt\Form\ChatGPTForm'
     _title: 'ChatGPT Form'
   requirements:
-    _permission: 'access content'
+    _role: 'administrator'
 chat_gpt.chat_g_p_t_config_form:
   path: '/admin/config/chat_gpt/chatgptconfig'
   defaults:

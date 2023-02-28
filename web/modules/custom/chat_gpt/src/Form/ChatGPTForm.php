@@ -53,17 +53,17 @@ class ChatGPTForm extends FormBase {
         ];
 
         $form['#attached']['library'][] = 'chat_gpt/chat-gpt-lib';
-
+        $config = \Drupal::config('chat_gpt.chatgptconfig');
+        $langs = explode(',', $config->get('chatgpt_api_language'));
+        $lang_options = [NULL => 'Choose Language'];
+        foreach ($langs as $lang) {
+            $lang = trim($lang);
+            $lang_options[$lang] = $lang;
+        }
         $form['lang_sel'] = [
             '#type' => 'select',
             '#title' => 'Select language',
-            '#options' => [
-                NULL => 'Choose Language',
-                'English' => 'English',
-                'French' => 'French',
-                'Hindi' => 'Hindi',
-                'Spanish' => 'Spanish',
-            ],
+            '#options' => $lang_options,
             '#ajax' => [
                 'callback' => '::promptCallback',
                 'wrapper' => 'replace-textfield-container',

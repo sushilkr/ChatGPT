@@ -66,10 +66,16 @@ class chatGPTConfigForm extends ConfigFormBase {
     $form['chatgpt_api_temperature'] = [
       '#type' => 'textfield',
       '#title' => $this->t('ChatGPT API Temperature'),
-      '#description' => $this->t('Enter the Temperature value here.Please set it to 0.9 for most creative output.'),
+      '#description' => $this->t('Enter the Temperature value here. Please set it to 0.9 for most creative output.'),
       '#maxlength' => 128,
       '#size' => 128,
       '#default_value' => $config->get('chatgpt_api_temperature'),
+    ];
+    $form['chatgpt_api_language'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Language'),
+      '#description' => $this->t('Enter the languages with comma separeted.'),
+      '#default_value' => $config->get('chatgpt_api_language'),
     ];
     return parent::buildForm($form, $form_state);
   }
@@ -86,6 +92,7 @@ class chatGPTConfigForm extends ConfigFormBase {
       ->set('chatgpt_api_access_token', $form_state->getValue('chatgpt_api_access_token'))
       ->set('chatgpt_api_max_token', $form_state->getValue('chatgpt_api_max_token'))
       ->set('chatgpt_api_temperature', $form_state->getValue('chatgpt_api_temperature'))
+      ->set('chatgpt_api_language', $form_state->getValue('chatgpt_api_language'))
       ->save();
   }
 
